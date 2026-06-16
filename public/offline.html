@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>You're offline · FortisPlay Admin</title>
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        background: #f5f7fb;
+        color: #0f172a;
+      }
+      .wrap {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 24px;
+      }
+      .badge {
+        width: 56px;
+        height: 56px;
+        border-radius: 16px;
+        background: #2563ff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 16px;
+      }
+      h1 { font-size: 20px; margin: 0 0 8px; }
+      p { font-size: 14px; color: #64748b; margin: 0 0 20px; max-width: 320px; }
+      button {
+        height: 40px;
+        padding: 0 20px;
+        border-radius: 12px;
+        border: none;
+        background: #2563ff;
+        color: #fff;
+        font-weight: 600;
+        font-size: 14px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="badge">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+          <path d="M14 2 L25 8 V20 L14 26 L3 20 V8 Z" stroke="white" stroke-width="1.6" fill="none" />
+          <path d="M10 9 H18 M10 9 V19 M10 14 H15.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </div>
+      <h1>You're offline</h1>
+      <p>This page isn't available without an internet connection. Check your network and try again.</p>
+      <button onclick="window.location.reload()">Retry</button>
+    </div>
+  </body>
+</html>

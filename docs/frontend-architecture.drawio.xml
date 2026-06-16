@@ -1,0 +1,439 @@
+<mxfile host="draw.io" modified="2026-06-16" agent="FortisPlay Admin Architecture" etag="fortisplay-arch" version="24.0.0" type="device">
+  <diagram id="current-arch" name="Current Frontend Architecture">
+    <mxGraphModel dx="1600" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- Title -->
+        <mxCell id="title1" value="FortisPlay Admin — Current Frontend Architecture" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=20;fontStyle=1;fontColor=#0F172A;" vertex="1" parent="1">
+          <mxGeometry x="400" y="20" width="500" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="subtitle1" value="Based on actual codebase analysis — Next.js 15 / React 19 / TypeScript 5 / TailwindCSS 3" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;fontColor=#64748B;" vertex="1" parent="1">
+          <mxGeometry x="400" y="55" width="500" height="25" as="geometry" />
+        </mxCell>
+
+        <!-- ============ FRONTEND LAYER ============ -->
+        <mxCell id="frontend-layer" value="FRONTEND LAYER" style="swimlane;startSize=30;fillColor=#EEF2FF;strokeColor=#2563FF;fontStyle=1;fontSize=14;fontColor=#2563FF;rounded=1;arcSize=8;" vertex="1" parent="1">
+          <mxGeometry x="40" y="100" width="720" height="420" as="geometry" />
+        </mxCell>
+
+        <!-- Pages -->
+        <mxCell id="pages-group" value="Pages (Server Components)" style="swimlane;startSize=25;fillColor=#FFFFFF;strokeColor=#CBD5E1;rounded=1;arcSize=6;fontSize=11;fontStyle=1;fontColor=#334155;" vertex="1" parent="frontend-layer">
+          <mxGeometry x="20" y="45" width="330" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="login-page" value="/ — LoginPage" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F8FAFC;strokeColor=#CBD5E1;fontSize=10;fontColor=#0F172A;" vertex="1" parent="pages-group">
+          <mxGeometry x="10" y="35" width="150" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="dashboard-page" value="/dashboard — DashboardPage" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F8FAFC;strokeColor=#CBD5E1;fontSize=10;fontColor=#0F172A;" vertex="1" parent="pages-group">
+          <mxGeometry x="170" y="35" width="150" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="eventday-page" value="/event-day — EventDayPage" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F8FAFC;strokeColor=#CBD5E1;fontSize=10;fontColor=#0F172A;" vertex="1" parent="pages-group">
+          <mxGeometry x="10" y="75" width="150" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="masters-page" value="/masters — MastersPage" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F8FAFC;strokeColor=#CBD5E1;fontSize=10;fontColor=#0F172A;" vertex="1" parent="pages-group">
+          <mxGeometry x="170" y="75" width="150" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="notfound-page" value="not-found.tsx (404)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F8FAFC;strokeColor=#CBD5E1;fontSize=10;fontColor=#0F172A;" vertex="1" parent="pages-group">
+          <mxGeometry x="10" y="115" width="150" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- Layouts -->
+        <mxCell id="layouts-group" value="Layouts" style="swimlane;startSize=25;fillColor=#FFFFFF;strokeColor=#CBD5E1;rounded=1;arcSize=6;fontSize=11;fontStyle=1;fontColor=#334155;" vertex="1" parent="frontend-layer">
+          <mxGeometry x="370" y="45" width="330" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="root-layout" value="RootLayout&#xa;(Font, Meta, Toast)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E0E8FF;strokeColor=#2563FF;fontSize=10;fontColor=#0F172A;" vertex="1" parent="layouts-group">
+          <mxGeometry x="10" y="35" width="150" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="app-layout" value="AppLayout (app)&#xa;(Navbar + Footer)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E0E8FF;strokeColor=#2563FF;fontSize=10;fontColor=#0F172A;" vertex="1" parent="layouts-group">
+          <mxGeometry x="170" y="35" width="150" height="35" as="geometry" />
+        </mxCell>
+
+        <!-- Feature Components -->
+        <mxCell id="feature-group" value="Feature Components (Client)" style="swimlane;startSize=25;fillColor=#FFFFFF;strokeColor=#CBD5E1;rounded=1;arcSize=6;fontSize=11;fontStyle=1;fontColor=#334155;" vertex="1" parent="frontend-layer">
+          <mxGeometry x="20" y="220" width="330" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="login-form" value="LoginForm" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FEF3C7;strokeColor=#F59E0B;fontSize=10;fontColor=#0F172A;" vertex="1" parent="feature-group">
+          <mxGeometry x="10" y="35" width="95" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="live-events" value="LiveEventsView" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FEF3C7;strokeColor=#F59E0B;fontSize=10;fontColor=#0F172A;" vertex="1" parent="feature-group">
+          <mxGeometry x="115" y="35" width="100" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="event-card" value="EventGroupCard" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FEF3C7;strokeColor=#F59E0B;fontSize=10;fontColor=#0F172A;" vertex="1" parent="feature-group">
+          <mxGeometry x="225" y="35" width="95" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="schedule-table" value="EventScheduleTable" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FEF3C7;strokeColor=#F59E0B;fontSize=10;fontColor=#0F172A;" vertex="1" parent="feature-group">
+          <mxGeometry x="10" y="73" width="110" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="master-modal" value="MasterDataModal" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FEF3C7;strokeColor=#F59E0B;fontSize=10;fontColor=#0F172A;" vertex="1" parent="feature-group">
+          <mxGeometry x="130" y="73" width="100" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="venues-table" value="VenuesTable" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FEF3C7;strokeColor=#F59E0B;fontSize=10;fontColor=#0F172A;" vertex="1" parent="feature-group">
+          <mxGeometry x="10" y="111" width="95" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="masters-tabs" value="MastersTabs" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FEF3C7;strokeColor=#F59E0B;fontSize=10;fontColor=#0F172A;" vertex="1" parent="feature-group">
+          <mxGeometry x="115" y="111" width="100" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="add-venue" value="AddVenueDrawer" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FEF3C7;strokeColor=#F59E0B;fontSize=10;fontColor=#0F172A;" vertex="1" parent="feature-group">
+          <mxGeometry x="225" y="111" width="95" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="navbar" value="Navbar" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FEF3C7;strokeColor=#F59E0B;fontSize=10;fontColor=#0F172A;" vertex="1" parent="feature-group">
+          <mxGeometry x="10" y="148" width="70" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="sidebar" value="Sidebar" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FEF3C7;strokeColor=#F59E0B;fontSize=10;fontColor=#0F172A;" vertex="1" parent="feature-group">
+          <mxGeometry x="90" y="148" width="70" height="25" as="geometry" />
+        </mxCell>
+
+        <!-- Shared UI -->
+        <mxCell id="ui-group" value="Shared UI Library (13 Components)" style="swimlane;startSize=25;fillColor=#FFFFFF;strokeColor=#CBD5E1;rounded=1;arcSize=6;fontSize=11;fontStyle=1;fontColor=#334155;" vertex="1" parent="frontend-layer">
+          <mxGeometry x="370" y="140" width="330" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="btn" value="Button" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F0FDF4;strokeColor=#16A34A;fontSize=9;fontColor=#0F172A;" vertex="1" parent="ui-group">
+          <mxGeometry x="10" y="33" width="70" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="inp" value="Input" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F0FDF4;strokeColor=#16A34A;fontSize=9;fontColor=#0F172A;" vertex="1" parent="ui-group">
+          <mxGeometry x="90" y="33" width="70" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="sel" value="Select" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F0FDF4;strokeColor=#16A34A;fontSize=9;fontColor=#0F172A;" vertex="1" parent="ui-group">
+          <mxGeometry x="170" y="33" width="70" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="srch" value="SearchBar" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F0FDF4;strokeColor=#16A34A;fontSize=9;fontColor=#0F172A;" vertex="1" parent="ui-group">
+          <mxGeometry x="250" y="33" width="70" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="bdg" value="Badge" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F0FDF4;strokeColor=#16A34A;fontSize=9;fontColor=#0F172A;" vertex="1" parent="ui-group">
+          <mxGeometry x="10" y="66" width="70" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="crd" value="Card" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F0FDF4;strokeColor=#16A34A;fontSize=9;fontColor=#0F172A;" vertex="1" parent="ui-group">
+          <mxGeometry x="90" y="66" width="70" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="tbl" value="Table" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F0FDF4;strokeColor=#16A34A;fontSize=9;fontColor=#0F172A;" vertex="1" parent="ui-group">
+          <mxGeometry x="170" y="66" width="70" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="pag" value="Pagination" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F0FDF4;strokeColor=#16A34A;fontSize=9;fontColor=#0F172A;" vertex="1" parent="ui-group">
+          <mxGeometry x="250" y="66" width="70" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="mdl" value="Modal" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F0FDF4;strokeColor=#16A34A;fontSize=9;fontColor=#0F172A;" vertex="1" parent="ui-group">
+          <mxGeometry x="10" y="99" width="70" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="drw" value="Drawer" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F0FDF4;strokeColor=#16A34A;fontSize=9;fontColor=#0F172A;" vertex="1" parent="ui-group">
+          <mxGeometry x="90" y="99" width="70" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="emp" value="EmptyState" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F0FDF4;strokeColor=#16A34A;fontSize=9;fontColor=#0F172A;" vertex="1" parent="ui-group">
+          <mxGeometry x="170" y="99" width="70" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="skl" value="Skeleton" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F0FDF4;strokeColor=#16A34A;fontSize=9;fontColor=#0F172A;" vertex="1" parent="ui-group">
+          <mxGeometry x="250" y="99" width="70" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="tst" value="Toast" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F0FDF4;strokeColor=#16A34A;fontSize=9;fontColor=#0F172A;" vertex="1" parent="ui-group">
+          <mxGeometry x="10" y="132" width="70" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="breadcrumb" value="Breadcrumb" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F0FDF4;strokeColor=#16A34A;fontSize=9;fontColor=#0F172A;" vertex="1" parent="ui-group">
+          <mxGeometry x="90" y="132" width="70" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="logo" value="Logo" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F0FDF4;strokeColor=#16A34A;fontSize=9;fontColor=#0F172A;" vertex="1" parent="ui-group">
+          <mxGeometry x="170" y="132" width="70" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="footer" value="Footer" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F0FDF4;strokeColor=#16A34A;fontSize=9;fontColor=#0F172A;" vertex="1" parent="ui-group">
+          <mxGeometry x="250" y="132" width="70" height="25" as="geometry" />
+        </mxCell>
+
+        <!-- Legend for frontend -->
+        <mxCell id="legend-client" value="🟡 Client Component" style="text;html=1;align=left;fontSize=9;fontColor=#92400E;" vertex="1" parent="ui-group">
+          <mxGeometry x="10" y="175" width="120" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-server" value="⚪ Server Component" style="text;html=1;align=left;fontSize=9;fontColor=#334155;" vertex="1" parent="ui-group">
+          <mxGeometry x="130" y="175" width="120" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-ui" value="🟢 UI Primitive" style="text;html=1;align=left;fontSize=9;fontColor=#15803D;" vertex="1" parent="ui-group">
+          <mxGeometry x="10" y="195" width="120" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-layout" value="🔵 Layout" style="text;html=1;align=left;fontSize=9;fontColor=#1E50DB;" vertex="1" parent="ui-group">
+          <mxGeometry x="130" y="195" width="120" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- ============ STATE LAYER ============ -->
+        <mxCell id="state-layer" value="STATE LAYER" style="swimlane;startSize=30;fillColor=#FFF7ED;strokeColor=#F59E0B;fontStyle=1;fontSize=14;fontColor=#92400E;rounded=1;arcSize=8;" vertex="1" parent="1">
+          <mxGeometry x="780" y="100" width="350" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="local-state" value="React useState()&#xa;(Component-local state)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FEF3C7;strokeColor=#F59E0B;fontSize=10;fontColor=#0F172A;" vertex="1" parent="state-layer">
+          <mxGeometry x="20" y="45" width="150" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="toast-ctx" value="React Context&#xa;ToastProvider" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FEF3C7;strokeColor=#F59E0B;fontSize=10;fontColor=#0F172A;" vertex="1" parent="state-layer">
+          <mxGeometry x="185" y="45" width="150" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="redux-added" value="✅ Redux Toolkit&#xa;Global state management (authSlice, eventsSlice, uiSlice)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DCFCE7;strokeColor=#16A34A;fontSize=10;fontColor=#14532D;fontStyle=1;" vertex="1" parent="state-layer">
+          <mxGeometry x="20" y="105" width="310" height="38" as="geometry" />
+        </mxCell>
+        <mxCell id="jest-added" value="✅ Jest + React Testing Library&#xa;Unit, integration &amp; snapshot tests" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DCFCE7;strokeColor=#16A34A;fontSize=10;fontColor=#14532D;fontStyle=1;" vertex="1" parent="state-layer">
+          <mxGeometry x="20" y="155" width="310" height="38" as="geometry" />
+        </mxCell>
+
+        <!-- ============ DATA LAYER ============ -->
+        <mxCell id="data-layer" value="DATA LAYER (Mock)" style="swimlane;startSize=30;fillColor=#F0FDF4;strokeColor=#16A34A;fontStyle=1;fontSize=14;fontColor=#15803D;rounded=1;arcSize=8;" vertex="1" parent="1">
+          <mxGeometry x="780" y="320" width="350" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="events-svc" value="services/events.ts&#xa;getLiveEvents()&#xa;→ Hardcoded EventGroup[]" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DCFCE7;strokeColor=#16A34A;fontSize=10;fontColor=#0F172A;" vertex="1" parent="data-layer">
+          <mxGeometry x="20" y="45" width="150" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="venues-svc" value="services/venues.ts&#xa;getVenues(), searchVenues()&#xa;→ Hardcoded Venue[]" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DCFCE7;strokeColor=#16A34A;fontSize=10;fontColor=#0F172A;" vertex="1" parent="data-layer">
+          <mxGeometry x="185" y="45" width="150" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="types-box" value="types/index.ts&#xa;EventGroup, Venue, RaceSlot,&#xa;NavItem, ToastMessage, etc." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DCFCE7;strokeColor=#16A34A;fontSize=10;fontColor=#0F172A;" vertex="1" parent="data-layer">
+          <mxGeometry x="20" y="115" width="150" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="utils-box" value="lib/utils.ts&#xa;cn(), formatNumber(),&#xa;truncate()" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DCFCE7;strokeColor=#16A34A;fontSize=10;fontColor=#0F172A;" vertex="1" parent="data-layer">
+          <mxGeometry x="185" y="115" width="150" height="55" as="geometry" />
+        </mxCell>
+
+        <!-- ============ INFRASTRUCTURE LAYER ============ -->
+        <mxCell id="infra-layer" value="INFRASTRUCTURE LAYER" style="swimlane;startSize=30;fillColor=#F5F3FF;strokeColor=#7C3AED;fontStyle=1;fontSize=14;fontColor=#6D28D9;rounded=1;arcSize=8;" vertex="1" parent="1">
+          <mxGeometry x="40" y="540" width="1340" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="nextjs-router" value="Next.js 15&#xa;App Router" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EDE9FE;strokeColor=#7C3AED;fontSize=10;fontColor=#0F172A;" vertex="1" parent="infra-layer">
+          <mxGeometry x="20" y="40" width="120" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="tailwind-box" value="TailwindCSS 3&#xa;Custom Design Tokens" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EDE9FE;strokeColor=#7C3AED;fontSize=10;fontColor=#0F172A;" vertex="1" parent="infra-layer">
+          <mxGeometry x="155" y="40" width="130" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="ts-box" value="TypeScript 5&#xa;Strict Mode" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EDE9FE;strokeColor=#7C3AED;fontSize=10;fontColor=#0F172A;" vertex="1" parent="infra-layer">
+          <mxGeometry x="300" y="40" width="110" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="pwa-box" value="PWA&#xa;Service Worker + Manifest" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EDE9FE;strokeColor=#7C3AED;fontSize=10;fontColor=#0F172A;" vertex="1" parent="infra-layer">
+          <mxGeometry x="425" y="40" width="140" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="eslint-box" value="ESLint + Prettier&#xa;Code Quality" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EDE9FE;strokeColor=#7C3AED;fontSize=10;fontColor=#0F172A;" vertex="1" parent="infra-layer">
+          <mxGeometry x="580" y="40" width="120" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="lucide-box" value="Lucide React&#xa;Icon Library" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EDE9FE;strokeColor=#7C3AED;fontSize=10;fontColor=#0F172A;" vertex="1" parent="infra-layer">
+          <mxGeometry x="715" y="40" width="110" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="font-box" value="Manrope Font&#xa;Google Fonts" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EDE9FE;strokeColor=#7C3AED;fontSize=10;fontColor=#0F172A;" vertex="1" parent="infra-layer">
+          <mxGeometry x="840" y="40" width="110" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="redux-infra" value="Redux Toolkit&#xa;State Management" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DCFCE7;strokeColor=#16A34A;fontSize=10;fontColor=#14532D;fontStyle=1;" vertex="1" parent="infra-layer">
+          <mxGeometry x="965" y="40" width="130" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="jest-infra" value="Jest + RTL + MSW&#xa;Testing Framework" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DCFCE7;strokeColor=#16A34A;fontSize=10;fontColor=#14532D;fontStyle=1;" vertex="1" parent="infra-layer">
+          <mxGeometry x="1110" y="40" width="140" height="45" as="geometry" />
+        </mxCell>
+
+        <!-- ============ ARROWS ============ -->
+        <!-- Pages → Feature Components -->
+        <mxCell id="arrow1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#64748B;strokeWidth=1.5;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="frontend-layer" source="pages-group" target="feature-group">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow1-label" value="renders" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=9;fontColor=#64748B;" vertex="1" connectable="0" parent="arrow1">
+          <mxGeometry x="-0.2" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
+        </mxCell>
+
+        <!-- Feature Components → UI -->
+        <mxCell id="arrow2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#64748B;strokeWidth=1.5;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="frontend-layer" source="feature-group" target="ui-group">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow2-label" value="composes" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=9;fontColor=#64748B;" vertex="1" connectable="0" parent="arrow2">
+          <mxGeometry x="-0.2" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
+        </mxCell>
+
+        <!-- Pages → Data Layer -->
+        <mxCell id="arrow3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#16A34A;strokeWidth=2;dashed=1;" edge="1" parent="1" source="pages-group" target="data-layer">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="760" y="230" />
+              <mxPoint x="760" y="420" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="arrow3-label" value="async data fetch" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=9;fontColor=#16A34A;" vertex="1" connectable="0" parent="arrow3">
+          <mxGeometry x="-0.1" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
+        </mxCell>
+
+        <!-- Feature Components → State Layer -->
+        <mxCell id="arrow4" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#F59E0B;strokeWidth=2;dashed=1;" edge="1" parent="1" source="feature-group" target="state-layer">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="760" y="410" />
+              <mxPoint x="760" y="200" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="arrow4-label" value="useState / useToast" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=9;fontColor=#92400E;" vertex="1" connectable="0" parent="arrow4">
+          <mxGeometry x="-0.1" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
+        </mxCell>
+
+        <!-- ============ TESTING LAYER ============ -->
+        <mxCell id="testing-layer" value="TESTING LAYER" style="swimlane;startSize=30;fillColor=#F0FDF4;strokeColor=#16A34A;fontStyle=1;fontSize=14;fontColor=#15803D;rounded=1;arcSize=8;" vertex="1" parent="1">
+          <mxGeometry x="780" y="540" width="350" height="230" as="geometry" />
+        </mxCell>
+        <mxCell id="jest-unit" value="Jest&#xa;Unit &amp; Snapshot Tests" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DCFCE7;strokeColor=#16A34A;fontSize=10;fontColor=#0F172A;" vertex="1" parent="testing-layer">
+          <mxGeometry x="20" y="45" width="150" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="rtl-box" value="React Testing Library&#xa;Component Integration Tests" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DCFCE7;strokeColor=#16A34A;fontSize=10;fontColor=#0F172A;" vertex="1" parent="testing-layer">
+          <mxGeometry x="185" y="45" width="150" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="redux-test" value="redux-mock-store / @reduxjs/toolkit&#xa;Slice &amp; reducer unit tests" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DCFCE7;strokeColor=#16A34A;fontSize=10;fontColor=#0F172A;" vertex="1" parent="testing-layer">
+          <mxGeometry x="20" y="105" width="150" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="msw-box" value="MSW (Mock Service Worker)&#xa;API mocking for integration tests" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DCFCE7;strokeColor=#16A34A;fontSize=10;fontColor=#0F172A;" vertex="1" parent="testing-layer">
+          <mxGeometry x="185" y="105" width="150" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="test-coverage" value="jest --coverage — Istanbul coverage reports (target: 80%+)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#BBF7D0;strokeColor=#16A34A;fontSize=10;fontColor=#14532D;fontStyle=1;" vertex="1" parent="testing-layer">
+          <mxGeometry x="20" y="165" width="310" height="35" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+
+  <diagram id="future-arch" name="Future Backend Integration Architecture">
+    <mxGraphModel dx="1600" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- Title -->
+        <mxCell id="f-title" value="FortisPlay Admin — Future Backend Integration Architecture" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=20;fontStyle=1;fontColor=#0F172A;" vertex="1" parent="1">
+          <mxGeometry x="300" y="20" width="600" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="f-subtitle" value="RECOMMENDED ARCHITECTURE — Not yet implemented" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;fontColor=#DC2626;fontStyle=3;" vertex="1" parent="1">
+          <mxGeometry x="400" y="55" width="400" height="25" as="geometry" />
+        </mxCell>
+
+        <!-- ============ FRONTEND ============ -->
+        <mxCell id="f-frontend" value="FRONTEND (Next.js 15 + React 19)" style="swimlane;startSize=30;fillColor=#EEF2FF;strokeColor=#2563FF;fontStyle=1;fontSize=13;fontColor=#2563FF;rounded=1;arcSize=8;" vertex="1" parent="1">
+          <mxGeometry x="40" y="90" width="280" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="f-pages" value="Pages&#xa;(Server Components)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F8FAFC;strokeColor=#CBD5E1;fontSize=10;" vertex="1" parent="f-frontend">
+          <mxGeometry x="20" y="40" width="240" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="f-features" value="Feature Components&#xa;(auth, dashboard, masters, ...)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FEF3C7;strokeColor=#F59E0B;fontSize=10;" vertex="1" parent="f-frontend">
+          <mxGeometry x="20" y="85" width="240" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="f-ui" value="UI Component Library&#xa;(Button, Card, Table, Modal, ...)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F0FDF4;strokeColor=#16A34A;fontSize=10;" vertex="1" parent="f-frontend">
+          <mxGeometry x="20" y="130" width="240" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="f-hooks" value="Custom Hooks&#xa;(useAuth, useDebounce, usePagination)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF7ED;strokeColor=#F59E0B;fontSize=10;" vertex="1" parent="f-frontend">
+          <mxGeometry x="20" y="175" width="240" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="f-routing" value="Routing + Middleware&#xa;(Auth guards, route protection)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EDE9FE;strokeColor=#7C3AED;fontSize=10;" vertex="1" parent="f-frontend">
+          <mxGeometry x="20" y="220" width="240" height="35" as="geometry" />
+        </mxCell>
+
+        <!-- ============ REDUX ============ -->
+        <mxCell id="f-redux" value="REDUX TOOLKIT (State Management)" style="swimlane;startSize=30;fillColor=#FFF7ED;strokeColor=#F59E0B;fontStyle=1;fontSize=13;fontColor=#92400E;rounded=1;arcSize=8;" vertex="1" parent="1">
+          <mxGeometry x="380" y="90" width="280" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="f-store" value="Redux Store&#xa;configureStore()" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FEF3C7;strokeColor=#F59E0B;fontSize=10;" vertex="1" parent="f-redux">
+          <mxGeometry x="20" y="40" width="240" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="f-slices" value="Feature Slices&#xa;authSlice, eventsSlice, venuesSlice, uiSlice" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FEF3C7;strokeColor=#F59E0B;fontSize=10;" vertex="1" parent="f-redux">
+          <mxGeometry x="20" y="85" width="240" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="f-rtk" value="RTK Query API&#xa;Auto-caching, invalidation, retry" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FEF3C7;strokeColor=#F59E0B;fontSize=10;" vertex="1" parent="f-redux">
+          <mxGeometry x="20" y="130" width="240" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="f-middleware" value="Middleware&#xa;Error handling, logging, auth" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FEF3C7;strokeColor=#F59E0B;fontSize=10;" vertex="1" parent="f-redux">
+          <mxGeometry x="20" y="175" width="240" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="f-selectors" value="Selectors&#xa;Memoized state derivation" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FEF3C7;strokeColor=#F59E0B;fontSize=10;" vertex="1" parent="f-redux">
+          <mxGeometry x="20" y="220" width="240" height="35" as="geometry" />
+        </mxCell>
+
+        <!-- ============ API LAYER ============ -->
+        <mxCell id="f-api" value="API LAYER (Services)" style="swimlane;startSize=30;fillColor=#F0FDF4;strokeColor=#16A34A;fontStyle=1;fontSize=13;fontColor=#15803D;rounded=1;arcSize=8;" vertex="1" parent="1">
+          <mxGeometry x="720" y="90" width="280" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="f-client" value="HTTP Client (Axios)&#xa;Base URL, timeouts, interceptors" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DCFCE7;strokeColor=#16A34A;fontSize=10;" vertex="1" parent="f-api">
+          <mxGeometry x="20" y="40" width="240" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="f-auth-int" value="Auth Interceptor&#xa;Token injection, refresh, 401 handling" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DCFCE7;strokeColor=#16A34A;fontSize=10;" vertex="1" parent="f-api">
+          <mxGeometry x="20" y="85" width="240" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="f-error" value="Error Handler&#xa;Retry logic, fallback, toast notifications" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DCFCE7;strokeColor=#16A34A;fontSize=10;" vertex="1" parent="f-api">
+          <mxGeometry x="20" y="130" width="240" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="f-endpoints" value="Endpoint Definitions&#xa;eventsApi, venuesApi, authApi, ..." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DCFCE7;strokeColor=#16A34A;fontSize=10;" vertex="1" parent="f-api">
+          <mxGeometry x="20" y="175" width="240" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="f-types" value="API Types&#xa;Request/Response DTOs" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DCFCE7;strokeColor=#16A34A;fontSize=10;" vertex="1" parent="f-api">
+          <mxGeometry x="20" y="220" width="240" height="35" as="geometry" />
+        </mxCell>
+
+        <!-- ============ BACKEND ============ -->
+        <mxCell id="f-backend" value="BACKEND APIs" style="swimlane;startSize=30;fillColor=#F5F3FF;strokeColor=#7C3AED;fontStyle=1;fontSize=13;fontColor=#6D28D9;rounded=1;arcSize=8;" vertex="1" parent="1">
+          <mxGeometry x="1060" y="90" width="280" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="f-rest" value="REST API / GraphQL&#xa;(Future implementation)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EDE9FE;strokeColor=#7C3AED;fontSize=10;" vertex="1" parent="f-backend">
+          <mxGeometry x="20" y="40" width="240" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="f-auth-be" value="Authentication Service&#xa;JWT tokens, session management" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EDE9FE;strokeColor=#7C3AED;fontSize=10;" vertex="1" parent="f-backend">
+          <mxGeometry x="20" y="85" width="240" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="f-events-be" value="Events Service&#xa;Live events, race cards, meetings" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EDE9FE;strokeColor=#7C3AED;fontSize=10;" vertex="1" parent="f-backend">
+          <mxGeometry x="20" y="130" width="240" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="f-masters-be" value="Masters Service&#xa;Venues, pools, users, terminals" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EDE9FE;strokeColor=#7C3AED;fontSize=10;" vertex="1" parent="f-backend">
+          <mxGeometry x="20" y="175" width="240" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="f-ws" value="WebSocket Service&#xa;Real-time event updates" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EDE9FE;strokeColor=#7C3AED;fontSize=10;" vertex="1" parent="f-backend">
+          <mxGeometry x="20" y="220" width="240" height="35" as="geometry" />
+        </mxCell>
+
+        <!-- Flow arrows -->
+        <mxCell id="fa1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#2563FF;strokeWidth=2.5;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="f-frontend" target="f-redux">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fa1-label" value="dispatch / select" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=10;fontColor=#2563FF;fontStyle=1;" vertex="1" connectable="0" parent="fa1">
+          <mxGeometry x="-0.1" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
+        </mxCell>
+
+        <mxCell id="fa2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#F59E0B;strokeWidth=2.5;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="f-redux" target="f-api">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fa2-label" value="RTK Query" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=10;fontColor=#92400E;fontStyle=1;" vertex="1" connectable="0" parent="fa2">
+          <mxGeometry x="-0.1" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
+        </mxCell>
+
+        <mxCell id="fa3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#16A34A;strokeWidth=2.5;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="f-api" target="f-backend">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fa3-label" value="HTTP / WS" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=10;fontColor=#15803D;fontStyle=1;" vertex="1" connectable="0" parent="fa3">
+          <mxGeometry x="-0.1" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
+        </mxCell>
+
+        <!-- Bottom flow summary -->
+        <mxCell id="f-flow" value="Request Flow:  Component → Redux (dispatch) → RTK Query → API Layer (Axios + Interceptors) → Backend API → Response → Cache → State Update → Re-render" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F1F5F9;strokeColor=#CBD5E1;fontSize=11;fontColor=#334155;fontStyle=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="40" y="400" width="1300" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Auth flow -->
+        <mxCell id="f-auth-flow" value="Auth Flow:  Login → POST /auth/login → JWT accessToken (memory) + refreshToken (httpOnly cookie) → Middleware validates on every route → 401 → Refresh → Retry or Redirect" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FEE2E2;strokeColor=#DC2626;fontSize=11;fontColor=#991B1B;fontStyle=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="40" y="455" width="1300" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- ============ TESTING LAYER (Future) ============ -->
+        <mxCell id="ft-testing" value="TESTING LAYER" style="swimlane;startSize=30;fillColor=#F0FDF4;strokeColor=#16A34A;fontStyle=1;fontSize=13;fontColor=#15803D;rounded=1;arcSize=8;" vertex="1" parent="1">
+          <mxGeometry x="40" y="510" width="1300" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="ft-jest" value="Jest&#xa;Unit &amp; Snapshot Tests" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DCFCE7;strokeColor=#16A34A;fontSize=10;" vertex="1" parent="ft-testing">
+          <mxGeometry x="20" y="40" width="175" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="ft-rtl" value="React Testing Library&#xa;Component Integration Tests" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DCFCE7;strokeColor=#16A34A;fontSize=10;" vertex="1" parent="ft-testing">
+          <mxGeometry x="210" y="40" width="175" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="ft-redux-test" value="@reduxjs/toolkit + redux-mock-store&#xa;Slice, reducer &amp; thunk unit tests" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DCFCE7;strokeColor=#16A34A;fontSize=10;" vertex="1" parent="ft-testing">
+          <mxGeometry x="400" y="40" width="210" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="ft-msw" value="MSW (Mock Service Worker)&#xa;API mocking for integration tests" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DCFCE7;strokeColor=#16A34A;fontSize=10;" vertex="1" parent="ft-testing">
+          <mxGeometry x="625" y="40" width="195" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="ft-e2e" value="Playwright / Cypress (future)&#xa;End-to-end testing" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DCFCE7;strokeColor=#16A34A;fontSize=10;" vertex="1" parent="ft-testing">
+          <mxGeometry x="835" y="40" width="185" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="ft-coverage" value="jest --coverage — 80%+ target" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#BBF7D0;strokeColor=#16A34A;fontSize=10;fontStyle=1;" vertex="1" parent="ft-testing">
+          <mxGeometry x="1035" y="40" width="235" height="45" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
