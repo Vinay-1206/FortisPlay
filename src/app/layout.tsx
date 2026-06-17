@@ -1,5 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import { Manrope } from 'next/font/google';
+import { Suspense } from 'react';
+// import { AppErrorBoundary } from '@/components/ErrorBoundary';
 import { ToastProvider } from '@/components/ui/Toast';
 import { PwaRegister } from '@/components/PwaRegister';
 import './globals.css';
@@ -45,8 +47,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={manrope.variable}>
       <body className="font-sans">
-        <ToastProvider>{children}</ToastProvider>
-        <PwaRegister />
+        {/* <AppErrorBoundary> */}
+        <Suspense fallback={<div>Loading...</div>}>
+          <ToastProvider>{children}</ToastProvider>
+          <PwaRegister />
+        </Suspense>
+
+        {/* </AppErrorBoundary> */}
       </body>
     </html>
   );

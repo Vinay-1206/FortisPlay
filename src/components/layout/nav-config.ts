@@ -11,15 +11,15 @@ export const PRIMARY_NAV: NavItem[] = [
   { label: 'Collection Merger', href: '/collection-merger' },
 ];
 
-/** Secondary tabs shown inside the Masters section. */
-export const MASTERS_TABS: NavItem[] = [
-  { label: 'Venues', href: '/masters' },
-  { label: 'Pools', href: '/masters/pools' },
-  { label: 'LS Prize', href: '/masters/ls-prize' },
-  { label: 'Distributions', href: '/masters/distributions' },
-  { label: 'Enclosures', href: '/masters/enclosures' },
-  { label: 'Terminals', href: '/masters/terminals' },
-  { label: 'Users', href: '/masters/users' },
-  { label: 'Users KYC', href: '/masters/users-kyc' },
-  { label: 'Locations', href: '/masters/locations' },
-];
+// /** Secondary tabs shown inside the Masters section. */
+// export const MASTERS_TABS: NavItem[] = [
+//   { label: 'Venues', href: '/masters' },
+//   { label: 'Pools', href: '/masters/pools' },
+//   { label: 'LS Prize', href: '/masters/ls-prize' },
+//   { label: 'Distributions', href: '/masters/distributions' },
+//   { label: 'Enclosures', href: '/masters/enclosures' },
+//   { label: 'Terminals', href: '/masters/terminals' },
+//   { label: 'Users', href: '/masters/users' },
+//   { label: 'Users KYC', href: '/masters/users-kyc' },
+//   { label: 'Locations', href: '/masters/locations' },
+// ];
