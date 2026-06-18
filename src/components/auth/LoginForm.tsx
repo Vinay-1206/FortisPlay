@@ -14,12 +14,9 @@ export function LoginForm() {
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
-  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
+  function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setIsLoading(true);
-
-    // Simulate an authentication request.
-    await new Promise((resolve) => setTimeout(resolve, 800));
 
     setIsLoading(false);
     show({ title: 'Signed in', description: 'Redirecting to the dashboard…', variant: 'success' });

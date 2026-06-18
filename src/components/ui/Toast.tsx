@@ -1,6 +1,6 @@
 'use client';
 
-import { createContext, useCallback, useContext, useState } from 'react';
+import { createContext, useCallback, useContext, useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { CheckCircle2, AlertCircle, Info, AlertTriangle, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -62,7 +62,16 @@ export function useToast() {
 
 function Toaster() {
   const ctx = useContext(ToastContext);
-  if (!ctx || typeof document === 'undefined') return null;
+  // Use a ref-backed mount flag to avoid triggering extra re-renders
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  // Never render on the server or before hydration is complete
+  if (!mounted || !ctx) return null;
+
   const { toasts, dismiss } = ctx;
 
   return createPortal(

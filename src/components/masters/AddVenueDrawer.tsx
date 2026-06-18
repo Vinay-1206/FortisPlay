@@ -29,10 +29,9 @@ export function AddVenueDrawer({ isOpen, onClose, onCreated }: AddVenueDrawerPro
   const [status, setStatus] = useState<'Active' | 'Deactive'>('Active');
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
+  function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setIsSubmitting(true);
-    await new Promise((resolve) => setTimeout(resolve, 600));
     setIsSubmitting(false);
     show({ title: 'Venue created', description: 'The new venue has been added.', variant: 'success' });
     onCreated?.();

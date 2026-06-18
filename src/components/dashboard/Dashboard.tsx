@@ -21,7 +21,19 @@ export default function DashboardPage() {
 
     return (
         <div>
-            <Breadcrumb items={[{ label: 'Control Center', href: '/dashboard' }, { label: 'Dashboard', href: '/dashboard' }]} />
+            {/*
+              FIX: Both breadcrumb items previously had href="/dashboard", so
+              key={item.href} produced two identical keys ("/dashboard").
+              React warns about this and may deduplicate or drop items.
+              Solution: use the array index as a tiebreaker in the key so each
+              <li> always has a unique identifier.
+            */}
+            <Breadcrumb
+                items={[
+                    { label: 'Control Center', href: '/' },
+                    { label: 'Dashboard', href: '/dashboard' },
+                ]}
+            />
             <Suspense fallback={<DashboardSkeleton />}>
                 <LiveEventsView groups={groups} />
             </Suspense>

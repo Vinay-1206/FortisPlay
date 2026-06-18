@@ -6,6 +6,7 @@ import { CardTableSkeleton } from '@/components/ui/Skeleton';
 import { VENUES } from '@/data/DummyData';
 import DistributionsTable from '@/components/masters/Distributions/DistributionsTable';
 import { cn } from '@/lib/utils';
+import PoolsTable from '../pools/PoolsTable';
 
 const MASTER_TABS = ['Venues', 'Pools', 'LS Prize', 'Distributions', 'Enclosures', 'Terminals', 'Users', 'Users KYC', 'Locations'] as const;
 
@@ -34,7 +35,7 @@ export default function VenuesPage() {
       <Suspense fallback={<CardTableSkeleton rows={5} cols={6} />}>
         {activeTab === 'Venues' && <VenuesContent />}
         {activeTab === 'Distributions' && <DistributionsContent />}
-
+        {activeTab === 'Pools' && <PoolsContent />}
       </Suspense>
     </div>
   );
@@ -49,3 +50,9 @@ function DistributionsContent() {
   // const distributions = DISTRIBUTIONS;
   return <DistributionsTable />;
 }
+
+function PoolsContent() {
+  // const pools = POOLS;
+  return <PoolsTable />;
+}
+

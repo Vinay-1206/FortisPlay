@@ -3,7 +3,8 @@
 const DistributionsTable = () => {
     return (
         <div>
-            Distributions Table
+            Distributions
+            Distributions
         </div>
     )
 }
