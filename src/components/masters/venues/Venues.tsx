@@ -14,7 +14,7 @@ export default function VenuesPage() {
   const [activeTab, setActiveTab] = useState('Venues')
   return (
     <div>
-      <Breadcrumb items={[{ label: 'Dashboard', href: '/dashboard' }, { label: 'Masters', href: '/masters' }]} />
+      <Breadcrumb items={['Dashboard', 'Masters']} />
       <h1 className="mb-4 text-2xl font-extrabold tracking-tight text-ink-900">Masters</h1>
       <div className="flex flex-wrap items-center gap-1 rounded-xl bg-surface-subtle p-1">
         {MASTER_TABS.map((tab) => (

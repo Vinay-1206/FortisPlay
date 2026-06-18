@@ -5,6 +5,7 @@ import { Breadcrumb } from '@/components/layout/Breadcrumb';
 import { CardTableSkeleton } from '@/components/ui/Skeleton';
 import { GROUPS } from '@/data/DummyData';
 import { Suspense } from 'react';
+import Testing from './Testing';
 
 function DashboardSkeleton() {
     return (
@@ -29,11 +30,9 @@ export default function DashboardPage() {
               <li> always has a unique identifier.
             */}
             <Breadcrumb
-                items={[
-                    { label: 'Control Center', href: '/' },
-                    { label: 'Dashboard', href: '/dashboard' },
-                ]}
+                items={['Control Center', 'Dashboard']}
             />
+
             <Suspense fallback={<DashboardSkeleton />}>
                 <LiveEventsView groups={groups} />
             </Suspense>

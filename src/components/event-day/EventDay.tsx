@@ -6,10 +6,7 @@ const EventDayContent = () => {
     return (
         <div>
             <Breadcrumb
-                items={[
-                    { label: 'Control Center', href: '/' },
-                    { label: 'Event Day', href: '/event-day' },
-                ]}
+                items={['Control Center', 'Event Day']}
             />
             EventDay
         </div>

@@ -62,45 +62,47 @@ export function useToast() {
 
 function Toaster() {
   const ctx = useContext(ToastContext);
-  // Use a ref-backed mount flag to avoid triggering extra re-renders
-  const [mounted, setMounted] = useState(false);
 
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  // Never render on the server or before hydration is complete
-  if (!mounted || !ctx) return null;
+  if (!ctx) return null;
 
   const { toasts, dismiss } = ctx;
+
+  if (typeof window === 'undefined') {
+    return null;
+  }
 
   return createPortal(
     <div className="fixed bottom-4 right-4 z-[100] flex w-full max-w-sm flex-col gap-2 sm:bottom-6 sm:right-6">
       {toasts.map((toast) => {
         const Icon = icons[toast.variant];
+
         return (
           <div
             key={toast.id}
             role="status"
-            className="flex items-start gap-3 rounded-xl border border-surface-muted bg-white p-4 shadow-elevated animate-fade-in"
+            className="flex items-start gap-3 rounded-xl border border-surface-muted bg-white p-4 shadow-elevated"
           >
-            <Icon className={cn('mt-0.5 h-5 w-5 flex-shrink-0', iconColors[toast.variant])} aria-hidden="true" />
+            <Icon
+              className={cn(
+                'mt-0.5 h-5 w-5 flex-shrink-0',
+                iconColors[toast.variant]
+              )}
+            />
+
             <div className="flex-1">
-              <p className="text-sm font-semibold text-ink-900">{toast.title}</p>
-              {toast.description && <p className="mt-0.5 text-sm text-ink-500">{toast.description}</p>}
+              <p>{toast.title}</p>
+              {toast.description && (
+                <p>{toast.description}</p>
+              )}
             </div>
-            <button
-              type="button"
-              onClick={() => dismiss(toast.id)}
-              aria-label="Dismiss notification"
-              className="text-ink-400 transition-colors hover:text-ink-900"
-            >
+
+            <button onClick={() => dismiss(toast.id)}>
               <X className="h-4 w-4" />
             </button>
           </div>
         );
       })}
     </div>,
-    document.body,
+    document.body
   );
 }
