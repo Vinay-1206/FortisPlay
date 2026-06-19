@@ -7,6 +7,7 @@ import { VENUES } from '@/data/DummyData';
 import DistributionsTable from '@/components/masters/Distributions/DistributionsTable';
 import { cn } from '@/lib/utils';
 import PoolsTable from '../pools/PoolsTable';
+import KycModalForm from '../kycModal/KycModalForm';
 
 const MASTER_TABS = ['Venues', 'Pools', 'LS Prize', 'Distributions', 'Enclosures', 'Terminals', 'Users', 'Users KYC', 'Locations'] as const;
 
@@ -15,27 +16,33 @@ export default function VenuesPage() {
   return (
     <div>
       <Breadcrumb items={['Dashboard', 'Masters']} />
-      <h1 className="mb-4 text-2xl font-extrabold tracking-tight text-ink-900">Masters</h1>
-      <div className="flex flex-wrap items-center gap-1 rounded-xl bg-surface-subtle p-1">
-        {MASTER_TABS.map((tab) => (
-          <button
-            key={tab}
-            type="button"
-            onClick={() => setActiveTab(tab)}
-            className={cn(
-              'rounded-lg px-3 py-1.5 text-sm font-medium transition-colors',
-              activeTab === tab ? 'bg-ink-900 text-white' : 'text-ink-700 hover:bg-white',
-            )}
-            aria-pressed={activeTab === tab}
-          >
-            {tab}
-          </button>
-        ))}
+      <div className="mb-6 flex items-center gap-8">
+        <h1 className="text-2xl font-bold text-slate-900 shrink-0">
+          Masters
+        </h1>
+
+        <div className="flex items-center gap-2 overflow-x-auto">
+          {MASTER_TABS.map((tab) => (
+            <button
+              key={tab}
+              onClick={() => setActiveTab(tab)}
+              className={cn(
+                "shrink-0 rounded-full px-4 py-2 text-sm font-medium transition-all duration-200",
+                activeTab === tab
+                  ? "bg-slate-900 text-white"
+                  : "text-slate-700 hover:bg-slate-100"
+              )}
+            >
+              {tab}
+            </button>
+          ))}
+        </div>
       </div>
       <Suspense fallback={<CardTableSkeleton rows={5} cols={6} />}>
         {activeTab === 'Venues' && <VenuesContent />}
         {activeTab === 'Distributions' && <DistributionsContent />}
         {activeTab === 'Pools' && <PoolsContent />}
+        {activeTab === 'Users KYC' && <UsersKYCContent />}
       </Suspense>
     </div>
   );
@@ -54,5 +61,9 @@ function DistributionsContent() {
 function PoolsContent() {
   // const pools = POOLS;
   return <PoolsTable />;
+}
+
+function UsersKYCContent() {
+  return <KycModalForm open={true} onClose={() => { }} />;
 }
 

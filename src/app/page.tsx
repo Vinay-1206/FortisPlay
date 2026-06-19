@@ -13,7 +13,12 @@ export const metadata: Metadata = {
  */
 export default function LoginPage() {
   return (
-    <div className="flex min-h-screen flex-col bg-auth-gradient">
+    <div
+      className="flex min-h-screen flex-col bg-cover bg-center bg-no-repeat"
+      style={{
+        backgroundImage: "url('/images/loginBg.jpg')",
+      }}
+    >
       <div className="flex flex-1 flex-col items-center justify-center px-4 py-12">
         <Logo className="mb-10 scale-125" />
 
