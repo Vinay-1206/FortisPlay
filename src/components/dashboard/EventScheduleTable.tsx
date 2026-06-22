@@ -33,7 +33,7 @@ export function EventScheduleTable({ group }: { group: EventGroup }) {
                   {slot && slot.time ? (
                     <Badge status={slot.status}>{slot.time}</Badge>
                   ) : (
-                    <span className="text-ink-300">-</span>
+                    <span className="text-ink-900">-</span>
                   )}
                 </Td>
               );

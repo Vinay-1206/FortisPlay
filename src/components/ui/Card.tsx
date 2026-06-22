@@ -5,16 +5,15 @@ export interface CardProps extends HTMLAttributes<HTMLDivElement> {
   noPadding?: boolean;
 }
 
-/**
- * Base surface card: white background, subtle border + shadow, 12px radius.
- * Mirrors the "Horse Racing / Karambola / Lucky Sign" group containers.
- */
-export function Card({ className, noPadding, children, ...props }: CardProps) {
+export function Card({
+  className,
+  children,
+  ...props
+}: CardProps) {
   return (
     <div
       className={cn(
-        'rounded-xl border border-surface-muted bg-white shadow-card',
-        !noPadding && 'p-4 sm:p-5',
+        'overflow-hidden rounded-xl border border-[#0F172A]/10 bg-white shadow-[0_1px_2px_rgba(0,0,0,0.05)]',
         className,
       )}
       {...props}
@@ -24,10 +23,17 @@ export function Card({ className, noPadding, children, ...props }: CardProps) {
   );
 }
 
-export function CardHeader({ className, children, ...props }: HTMLAttributes<HTMLDivElement>) {
+export function CardHeader({
+  className,
+  children,
+  ...props
+}: HTMLAttributes<HTMLDivElement>) {
   return (
     <div
-      className={cn('mb-4 flex flex-wrap items-center justify-between gap-3', className)}
+      className={cn(
+        'flex h-[69px] items-center justify-between border-b border-[#EAEEF2] px-5 py-4',
+        className,
+      )}
       {...props}
     >
       {children}
@@ -35,9 +41,19 @@ export function CardHeader({ className, children, ...props }: HTMLAttributes<HTM
   );
 }
 
-export function CardTitle({ className, children, ...props }: HTMLAttributes<HTMLHeadingElement>) {
+export function CardTitle({
+  className,
+  children,
+  ...props
+}: HTMLAttributes<HTMLHeadingElement>) {
   return (
-    <h2 className={cn('text-lg font-bold text-ink-900', className)} {...props}>
+    <h2
+      className={cn(
+        'text-[22px] font-semibold text-[#1F2937]',
+        className,
+      )}
+      {...props}
+    >
       {children}
     </h2>
   );
