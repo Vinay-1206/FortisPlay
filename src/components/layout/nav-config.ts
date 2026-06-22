@@ -7,9 +7,7 @@ export const PRIMARY_NAV: NavItem[] = [
   { label: 'Masters', href: '/masters' },
   { label: 'Allotments', href: '/allotments' },
   { label: 'Reports', href: '/reports' },
-  { label: 'CCTV', href: '/cctv' },
-  { label: 'Collection Merger', href: '/collection-merger' },
-];
+];  
 
 // /** Secondary tabs shown inside the Masters section. */
 // export const MASTERS_TABS: NavItem[] = [

@@ -21,7 +21,7 @@ export function Navbar() {
 
   return (
     <>
-      <header className="sticky top-0 z-30 border-b border-surface-muted bg-white">
+      <header className="sticky top-0 z-30 bg-white border-b border-[#E2E8F0]">
         <div className="flex h-14 items-center gap-3 px-4 sm:px-6">
           <button
             type="button"
@@ -56,17 +56,25 @@ export function Navbar() {
         </div>
 
         {/* Secondary tab navigation */}
-        <nav aria-label="Sections" className="hidden border-t border-surface-muted lg:block">
-          <ul className="flex items-center gap-1 px-4 py-2 sm:px-6">
+        <nav
+          aria-label="Sections"
+          className="hidden lg:block h-12 border-t border-[#E2E8F0] bg-[#F8FAFC]/80"
+        >
+          <ul className="flex h-full items-center gap-1 px-[60px]">
             {PRIMARY_NAV.map((item) => {
-              const active = pathname === item.href || pathname.startsWith(`${item.href}/`);
+              const active =
+                pathname === item.href ||
+                pathname.startsWith(`${item.href}/`);
+
               return (
                 <li key={item.href}>
                   <Link
                     href={item.href}
                     className={cn(
-                      'block rounded-lg px-3 py-1.5 text-sm font-medium transition-colors',
-                      active ? 'bg-ink-900 text-white' : 'text-ink-700 hover:bg-surface-subtle',
+                      'inline-flex h-6 items-center justify-center rounded-full px-4 py-1 text-[14px] font-medium transition-colors',
+                      active
+                        ? 'bg-[#1F232B] text-white'
+                        : 'text-[#4B5563] hover:bg-white'
                     )}
                     aria-current={active ? 'page' : undefined}
                   >
