@@ -12,7 +12,7 @@ export function TableContainer({ className, children, ...props }: HTMLAttributes
 
 export function TableHead({ className, children, ...props }: HTMLAttributes<HTMLTableSectionElement>) {
   return (
-    <thead className={cn('bg-surface-subtle', className)} {...props}>
+    <thead className={cn('bg-[#2563FF]/[0.08]', className)} {...props}>
       {children}
     </thead>
   );
@@ -34,12 +34,26 @@ export function TableRow({ className, children, ...props }: HTMLAttributes<HTMLT
   );
 }
 
-export function Th({ className, children, ...props }: ThHTMLAttributes<HTMLTableCellElement>) {
+export function Th({
+  className,
+  children,
+  ...props
+}: ThHTMLAttributes<HTMLTableCellElement>) {
   return (
     <th
       scope="col"
       className={cn(
-        'whitespace-nowrap px-4 py-3 text-left text-xs font-semibold uppercase tracking-wide text-ink-500',
+        `
+        h-10
+        bg-[#2563FF]/[0.08]
+        px-5
+        text-left
+        text-[12px]
+        font-semibold
+        uppercase
+        tracking-wide
+        text-[#5B6475]
+        `,
         className,
       )}
       {...props}

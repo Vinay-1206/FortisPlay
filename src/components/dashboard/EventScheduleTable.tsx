@@ -14,7 +14,7 @@ export function EventScheduleTable({ group }: { group: EventGroup }) {
     <TableContainer className="scrollbar-thin">
       <TableHead>
         <TableRow>
-          <Th className="sticky left-0 z-10 bg-surface-subtle">{firstColumnLabel}</Th>
+          <Th className="sticky left-0 z-20">{firstColumnLabel}</Th>
           {group.columns.map((col) => (
             <Th key={col} className="text-center">
               {col}
