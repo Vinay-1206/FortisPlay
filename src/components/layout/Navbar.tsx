@@ -9,6 +9,7 @@ import { SearchBar } from '@/components/ui/SearchBar';
 import { Logo } from './Logo';
 import { Sidebar } from './Sidebar';
 import { PRIMARY_NAV } from './nav-config';
+import Image from 'next/image';
 
 /**
  * Application top bar: brand mark, global search, account menu and the
@@ -58,9 +59,10 @@ export function Navbar() {
         {/* Secondary tab navigation */}
         <nav
           aria-label="Sections"
-          className="hidden lg:block h-12 border-t border-[#E2E8F0] bg-[#F8FAFC]/80"
+          className="hidden lg:flex h-12 items-center justify-between border-t border-[#E2E8F0] bg-[#F8FAFC]/80 px-[60px]"
         >
-          <ul className="flex h-full items-center gap-1 px-[60px]">
+          {/* Left Navigation */}
+          <ul className="flex items-center gap-1">
             {PRIMARY_NAV.map((item) => {
               const active =
                 pathname === item.href ||
@@ -84,6 +86,27 @@ export function Navbar() {
               );
             })}
           </ul>
+
+          {/* Right Live Section */}
+          <div className="flex items-center gap-2">
+            <Image
+              src="/images/signal.png"
+              alt="Live Signal"
+              width={24}
+              height={24}
+              className="object-contain"
+            />
+
+            <div className="leading-none">
+              <div className="text-[10px] font-medium uppercase text-[#9CA3AF]">
+                LIVE
+              </div>
+
+              <div className="mt-[2px] text-[14px] font-semibold text-[#1F2937]">
+                18 JUN 10:21:56
+              </div>
+            </div>
+          </div>
         </nav>
 
         {/* Search visible on mobile, under the brand row */}
