@@ -1,6 +1,5 @@
 'use client'
 import { Suspense, useState } from 'react';
-import { Breadcrumb } from '@/components/layout/Breadcrumb';
 import { VenuesTable } from '@/components/masters/VenuesTable';
 import { CardTableSkeleton } from '@/components/ui/Skeleton';
 import { VENUES } from '@/data/DummyData';
@@ -15,7 +14,6 @@ export default function VenuesPage() {
   const [activeTab, setActiveTab] = useState('Venues')
   return (
     <div>
-      <Breadcrumb items={['Dashboard', 'Masters']} />
       <div className="mb-6 flex items-center gap-8">
         <h1 className="text-2xl font-bold text-slate-900 shrink-0">
           Masters

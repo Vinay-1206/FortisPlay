@@ -1,7 +1,6 @@
 'use client'
 
 import { LiveEventsView } from '@/components/dashboard/LiveEventsView';
-import { Breadcrumb } from '@/components/layout/Breadcrumb';
 import { CardTableSkeleton } from '@/components/ui/Skeleton';
 import { GROUPS } from '@/data/DummyData';
 import { Suspense } from 'react';
@@ -22,17 +21,6 @@ export default function DashboardPage() {
 
     return (
         <div>
-            {/*
-              FIX: Both breadcrumb items previously had href="/dashboard", so
-              key={item.href} produced two identical keys ("/dashboard").
-              React warns about this and may deduplicate or drop items.
-              Solution: use the array index as a tiebreaker in the key so each
-              <li> always has a unique identifier.
-            */}
-            <Breadcrumb
-                items={['Control Center', 'Dashboard']}
-            />
-
             <Suspense fallback={<DashboardSkeleton />}>
                 <LiveEventsView groups={groups} />
             </Suspense>
