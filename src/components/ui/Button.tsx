@@ -19,15 +19,15 @@ const variantStyles: Record<ButtonVariant, string> = {
   secondary:
     'bg-surface-muted text-ink-900 hover:bg-ink-300/40 focus-visible:ring-ink-300',
   outline:
-    'border border-surface-muted bg-white text-ink-700 hover:bg-surface-subtle focus-visible:ring-primary-200',
+    'border-[1.5px] border-[#2563FF] bg-white text-[#2563FF] hover:bg-[#2563FF]/[0.04] focus-visible:ring-[#2563FF]/30',
   ghost: 'bg-transparent text-ink-700 hover:bg-surface-subtle focus-visible:ring-ink-300',
   danger: 'bg-status-stopped text-white hover:bg-red-700 focus-visible:ring-red-300',
 };
 
 const sizeStyles: Record<ButtonSize, string> = {
-  sm: 'h-8 px-3 text-sm gap-1.5 rounded-lg',
-  md: 'h-10 px-4 text-sm gap-2 rounded-xl',
-  lg: 'h-12 px-6 text-base gap-2 rounded-xl',
+  sm: 'h-9 px-[16px] pl-[12px] gap-1 rounded-[8px] text-[14px]',
+  md: 'h-10 px-4 gap-2 rounded-[8px] text-[14px]',
+  lg: 'h-12 px-6 gap-2 rounded-[8px] text-[16px]',
 };
 
 /**

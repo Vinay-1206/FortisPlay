@@ -30,18 +30,22 @@ export function LiveEventsView({ groups }: { groups: EventGroup[] }) {
   return (
     <div className="flex flex-col gap-4">
       {/* Header: title, tabs, legend and refresh */}
-      <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-        <div className="flex flex-wrap items-center gap-3">
-          <h1 className="text-2xl font-extrabold tracking-tight text-ink-900">Live Events</h1>
-          <div className="flex flex-wrap items-center gap-1 rounded-xl bg-surface-subtle p-1">
+      <div className="flex items-center justify-between min-h-12">
+        <div className="flex items-center gap-6">
+          <h1 className="text-2xl font-extrabold tracking-tight text-ink-900">
+            Live Events
+          </h1>
+          <div className="flex items-center gap-6 h-12">
             {TABS.map((tab) => (
               <button
                 key={tab}
                 type="button"
                 onClick={() => setActiveTab(tab)}
                 className={cn(
-                  'rounded-lg px-3 py-1.5 text-sm font-medium transition-colors',
-                  activeTab === tab ? 'bg-ink-900 text-white' : 'text-ink-700 hover:bg-white',
+                  'h-6 px-4 rounded-full text-[14px] font-medium transition-all duration-200',
+                  activeTab === tab
+                    ? 'bg-[#1F232B] text-white'
+                    : 'bg-transparent text-[#4B5563]'
                 )}
                 aria-pressed={activeTab === tab}
               >
@@ -61,7 +65,15 @@ export function LiveEventsView({ groups }: { groups: EventGroup[] }) {
           <Button
             variant="outline"
             size="sm"
-            leftIcon={<RefreshCw className={cn('h-4 w-4', isRefreshing && 'animate-spin')} />}
+            className="rounded-[8px] border-[1.5px] border-[#2563FF] text-[#2563FF]"
+            leftIcon={
+              <RefreshCw
+                className={cn(
+                  'h-4 w-4 text-[#2563FF]',
+                  isRefreshing && 'animate-spin'
+                )}
+              />
+            }
             onClick={handleRefresh}
           >
             Refresh
