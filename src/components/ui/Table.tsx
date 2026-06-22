@@ -4,7 +4,7 @@ import { cn } from '@/lib/utils';
 /** Horizontally scrollable wrapper so wide tables behave on mobile. */
 export function TableContainer({ className, children, ...props }: HTMLAttributes<HTMLDivElement>) {
   return (
-    <div className={cn('w-full overflow-x-auto rounded-xl border border-surface-muted', className)} {...props}>
+    <div className={cn('w-full overflow-x-auto border border-[#EAEEF2] p-2', className)} {...props}>
       <table className="w-full min-w-max border-collapse text-sm">{children}</table>
     </div>
   );
